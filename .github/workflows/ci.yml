@@ -22,6 +22,6 @@ jobs:
       - name: install modules
         run: pnpm install
       - name: run playwright
-        run: pnpm run tests
-      - name: run unit
         run: pnpm run test
+      - name: run unit
+        run: pnpm run test:unit

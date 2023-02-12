@@ -1,5 +1,5 @@
 
-export default {
+module.exports = {
 	root: true,
 	parser: '@typescript-eslint/parser',
 	extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
@@ -7,7 +7,7 @@ export default {
 	ignorePatterns: ['*.cjs'],
 	overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
 	settings: {
-		'svelte3/typescript': () => import('typescript')
+		'svelte3/typescript': () => require('typescript')
 	},
 	parserOptions: {
 		sourceType: 'module',
