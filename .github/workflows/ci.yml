@@ -21,7 +21,17 @@ jobs:
 
       - name: install modules
         run: pnpm install
-      - name: run playwright
-        run: pnpm run test
+
       - name: run unit
         run: pnpm run test:unit
+
+      - name: Install Playwright Browsers
+        run: pnpm exec playwright install --with-deps
+      - name: Run Playwright tests
+        run: pnpm test
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
